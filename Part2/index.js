@@ -13,9 +13,9 @@ function setCard(){
     card.style.color = colorInput.value
 }
 
-function reset(){
-    const cardReset = document.getElementsByTagName('section')
-    for ( i = 0; i < cardReset.length; i++){
-       cardReset[i].classList.toggle('section') 
-    }
-}
+// function reset(){
+//     const cardReset = document.getElementsByTagName('section')
+//     for (i = 0; i < cardReset.length; i++){
+//        cardReset[i].style.color = grey; 
+//     }
+// }

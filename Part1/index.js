@@ -31,29 +31,64 @@ function play(boxID) { //pass in every time board is clicked
         clickedBox.innerText = 'O'
         status[boxID] = 'O' 
     }
-    console.log(status)
-    winner(status) 
+    winner()
 }
-
-let winningPlayer = ''
-
-function winner(status){
-    if(status[0] && status[0] === status[1] === status[2]){
-        winningPlayer = document.getElementbyID('player.innerText')}
-
-    
-    
-    
-    
-    
-    
-    
-    alert(winningPlayer + ' wins!')
-}
-
 
 
  // check horizontal
  //check vertical
  //check diagonal
  //no winner = cats game
+
+function winner(){
+    if (status[0] !== undefined && status[0] === status[1] && status[0] === status[2]) {
+        alert(status[0] + ' wins!')
+        return
+    } 
+    if(status[3] !==undefined && status[3] === status[4] && status[3] === status[5]) {
+        (status[3] + ' wins!')
+        return
+    }   
+    if(status[6] !==undefined && status[6] === status[7] && status[6] === status[8]) {
+        alert(status[6] + ' wins!')
+        return
+    }
+    if(status[0] !==undefined && status[0] === status[3] && status[0] === status[6]) {
+        alert(status[0] + ' wins!')
+        return
+    } 
+    if(status[1] !==undefined && status[1] === status[4] && status[1] === status[7]) {
+        alert(status[1] + ' wins!')
+        return    
+    } 
+    if(status[2] !==undefined && status[2] === status[5] && status[2] === status[8]) {
+        alert(status[2] + ' wins!')
+        return
+    } 
+    if(status[0] !==undefined && status[0] === status[4] && status[0] === status[8]) {
+        alert(status[0] + ' wins!')
+        return
+    } 
+    if(status[2] !==undefined && status[2] === status[4] && status[2] === status[6]) {
+        alert(status[2] + ' wins!')
+        return
+    }
+    let staleMate = true
+    
+    for (let i = 0; i <= 8; i++){
+        if (status[i] === undefined){
+            staleMate = false
+        }
+    }
+        if (staleMate === true) {
+            alert("Cat's Game!")
+    }
+
+      
+}
+
+
+
+
+
+
